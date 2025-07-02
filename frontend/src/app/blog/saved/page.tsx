@@ -20,16 +20,18 @@ const SavedBlogs = () => {
       <h1 className="text-3xl font-bold mt-2">Saved Blogs</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         {filteredBlogs.length > 0 ? (
-          filteredBlogs.map((e, i) => {
+          filteredBlogs.map((blog, i) => {
             return (
-              <BlogCard
-                key={i}
-                image={e.image}
-                title={e.title}
-                desc={e.description}
-                id={e.id}
-                time={e.created_at}
-              />
+               <BlogCard
+                      key={blog.id}
+                      image={blog.image}
+                      title={blog.title}
+                      desc={blog.description}
+                      id={blog.id}
+                      time={blog.created_at}
+                      author={blog.author}
+                      category={blog.category}
+                    />
             );
           })
         ) : (
